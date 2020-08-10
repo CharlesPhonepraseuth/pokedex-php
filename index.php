@@ -3,6 +3,7 @@
 require('model/Router.php');
 require('controller/mainController.php');
 require('controller/typeController.php');
+require('controller/searchController.php');
 
 // autoloader function (Class)
 function autoLoader($classe) {
@@ -21,5 +22,7 @@ $router->get('/pokemon/{:num}', function($pokemonNumber) { pokemonPage((int)$pok
 
 $router->get('/types', function() { typesPage(); });
 $router->get('/type/{:num}', function($typeNumber) { pokemonsByType((int)$typeNumber); });
+
+$router->post('/search', function() { searchResults(); });
 
 $router->listen();
