@@ -144,3 +144,16 @@ main div.row--details div.details {
     color: violet;
     font-size: 12px;   
 }
+
+.notFound {
+    position: relative;
+    max-width: 40vw;
+    margin-left: -40vw;
+}
+
+.notFound404 {
+    position: absolute;
+    top: 30vh;
+    left: 40vw;
+    width: 50vw;
+}
