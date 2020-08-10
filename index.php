@@ -2,6 +2,7 @@
 
 require('model/Router.php');
 require('controller/mainController.php');
+require('controller/typeController.php');
 
 // autoloader function (Class)
 function autoLoader($classe) {
@@ -17,5 +18,7 @@ $router = new \Project\Pokedex\Model\Router;
 
 $router->get('/', function() { homePage(); });
 $router->get('/pokemon/{:num}', function($pokemonNumber) { pokemonPage((int)$pokemonNumber); });
+
+$router->get('/types', function() { typesPage(); });
 
 $router->listen();
