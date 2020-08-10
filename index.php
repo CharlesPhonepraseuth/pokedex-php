@@ -4,6 +4,7 @@ require('model/Router.php');
 require('controller/mainController.php');
 require('controller/typeController.php');
 require('controller/searchController.php');
+require('controller/teamController.php');
 
 // autoloader function (Class)
 function autoLoader($classe) {
@@ -29,5 +30,7 @@ $router->get('/search', function() {
     header('Location: http://localhost:3000/');
     exit();
 });
+
+$router->get('/team', function() { teamPage(); });
 
 $router->listen();

@@ -139,3 +139,8 @@ main div.row--details div.details {
 .link--add {
     color: violet;
 }
+
+.link--delete {
+    color: violet;
+    font-size: 12px;   
+}
