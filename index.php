@@ -20,5 +20,6 @@ $router->get('/', function() { homePage(); });
 $router->get('/pokemon/{:num}', function($pokemonNumber) { pokemonPage((int)$pokemonNumber); });
 
 $router->get('/types', function() { typesPage(); });
+$router->get('/type/{:num}', function($typeNumber) { pokemonsByType((int)$typeNumber); });
 
 $router->listen();
