@@ -24,5 +24,10 @@ $router->get('/types', function() { typesPage(); });
 $router->get('/type/{:num}', function($typeNumber) { pokemonsByType((int)$typeNumber); });
 
 $router->post('/search', function() { searchResults(); });
+// if the user refresh /search, it will redirect to homePage because $_POST['nom'] from /search form is undefined
+$router->get('/search', function() {
+    header('Location: http://localhost:3000/');
+    exit();
+});
 
 $router->listen();
