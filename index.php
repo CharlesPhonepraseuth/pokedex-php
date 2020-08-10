@@ -33,5 +33,6 @@ $router->get('/search', function() {
 
 $router->get('/team', function() { teamPage(); });
 $router->get('/team/add/{:num}', function($pokemonNumber) { addToTeam((int)$pokemonNumber); });
+$router->get('/team/delete/{:num}', function($pokemonNumber) { deleteFromTeam((int)$pokemonNumber); });
 
 $router->listen();

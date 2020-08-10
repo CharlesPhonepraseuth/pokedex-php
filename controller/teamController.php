@@ -41,3 +41,15 @@ function addToTeam($number) {
 
     require('view/teamView.php');
 };
+
+/**
+ * Render the team page after deleting the pokemon selected
+ */
+function deleteFromTeam($number) {
+    // when we select the pokemon to delete, the array filter remove the selected one, and the array will be the next $_SESSION
+    $_SESSION['team'] = array_filter($_SESSION['team'], function ($pokemon) use ($number) {
+        return $pokemon['numero'] != $number;
+    });
+
+    require('view/teamView.php');
+};
