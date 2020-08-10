@@ -32,5 +32,6 @@ $router->get('/search', function() {
 });
 
 $router->get('/team', function() { teamPage(); });
+$router->get('/team/add/{:num}', function($pokemonNumber) { addToTeam((int)$pokemonNumber); });
 
 $router->listen();

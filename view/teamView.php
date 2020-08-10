@@ -5,6 +5,12 @@
     <p>Aucun pokemon dans votre équipe !</p>
 <?php endif ?>
 
+<?php if (isset($error)): ?>
+    <div class="row">
+        <?= $error ?>
+    </div>
+<?php endif ?>
+
 <?php foreach ($_SESSION['team'] as $pokemon): ?>
     <div class="thumbnail">
         <a href="/pokemon/<?= $pokemon['numero'] ?>">
