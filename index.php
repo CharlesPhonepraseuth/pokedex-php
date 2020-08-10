@@ -16,5 +16,6 @@ spl_autoload_register('autoLoader');
 $router = new \Project\Pokedex\Model\Router;
 
 $router->get('/', function() { homePage(); });
+$router->get('/pokemon/{:num}', function($pokemonNumber) { pokemonPage((int)$pokemonNumber); });
 
 $router->listen();
