@@ -5,10 +5,10 @@
  */
 function searchResults() {
     // instantiate SearchManager to call the findByLikeName function
-    $typesManager = new \Project\Pokedex\Model\SearchManager;
+    $searchManager = new \Project\Pokedex\Model\SearchManager;
     
     if (isset($_POST['nom']) && !empty($_POST['nom'])) {
-        $datas = $typesManager->findByLikeName($_POST['nom']);
+        $datas = $searchManager->findByLikeName($_POST['nom']);
         
         // the result will be received by the view to render the search
         require('view/homeView.php');
