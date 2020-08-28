@@ -5,9 +5,20 @@ namespace Project\Pokedex\Model;
 require_once("model/Manager.php");
 
 class PokemonManager extends Manager {
-    public function findAll() {
+    public function totalNumber() {
         $db = $this->dbConnect();
-        $results = $db->query('SELECT * FROM pokemon');
+        $result = $db->query('SELECT count(*) as count FROM pokemon');
+
+        return $result;
+    }
+
+    public function paginate($page, $number) {
+        $db = $this->dbConnect();
+        // passed variables through ':var' format because '?' doesn't work
+        $results = $db->prepare("SELECT * FROM pokemon LIMIT :page, :number");
+        $results->bindParam(':page', $page, \PDO:: PARAM_INT);
+        $results->bindParam(':number', $number, \PDO::PARAM_INT);
+        $results->execute();
 
         return $results;
     }

@@ -14,14 +14,14 @@
     <body>
         <header>
             <nav>
-                <a href="/" id="home">Pokedex</a>
+                <a href="/accueil?page=1&number=20" id="home">Pokedex</a>
                 <div class="navbar">
                     <form action="/search" method="post">
                         <input type="text" name="nom" >
                         <input type="submit" value="Chercher">
                     </form>
                     <div class="link">
-                        <a href="/">Liste</a>
+                        <a href="/accueil?page=1&number=20">Liste</a>
                         <a href="/types">Types</a>
                         <a href="/team">Mon Équipe</a>
                     </div>
@@ -31,7 +31,6 @@
         <main>
 
             <?= $content ?>
-
-        </main>
+            
     </body>
 </html>

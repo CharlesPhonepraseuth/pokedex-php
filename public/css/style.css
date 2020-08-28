@@ -157,3 +157,22 @@ main div.row--details div.details {
     left: 40vw;
     width: 50vw;
 }
+
+footer {
+    margin: 1em 0 4em 0;
+    text-align: center;
+}
+
+.pagination a {
+    padding: .5em;
+    margin: .5em;
+    border: 1px solid #632b2a;
+    border-radius: 1rem;
+}
+
+.currentPage {
+    transform: scale(1.1);
+    background-color: #632b2a;
+    color: white;
+    font-size: bold;
+}

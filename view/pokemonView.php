@@ -47,7 +47,8 @@
     <div class="row">
         <a href="/">Revenir à la liste</a>
     </div>
-
+    
+</main>
 
 <?php
 $content = ob_get_clean();

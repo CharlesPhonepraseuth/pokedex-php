@@ -3,10 +3,15 @@
 /**
  * Render the homepage with pokemons list (1st edition)
  */
-function homePage() {
+function homePage($page, $number) {
     // instantiate PokemonManager to call the findAll function
     $pokemonManager = new \Project\Pokedex\Model\PokemonManager;
-    $datas = $pokemonManager->findAll();
+    
+    $pokemons = $pokemonManager->paginate((($page - 1) * $number), $number);
+    
+    $count = $pokemonManager->totalNumber();
+    $maxPokemon = $count->fetch();
+    $maxPage = ceil((int)$maxPokemon['count'] / $number);
 
     // the results will be received by the view to render all pokemons
     require('view/homeView.php');

@@ -18,7 +18,11 @@ spl_autoload_register('autoLoader');
 
 $router = new \Project\Pokedex\Model\Router;
 
-$router->get('/', function() { homePage(); });
+$router->get('/', function() {
+    header('Location: http://localhost:3000/accueil?page=1&number=20');
+    exit();
+});
+$router->get('/accueil?page={:num}&number={:num}', function($page, $number) { homePage((int)$page, (int)$number); });
 $router->get('/pokemon/{:num}', function($pokemonNumber) { pokemonPage((int)$pokemonNumber); });
 
 $router->get('/types', function() { typesPage(); });
@@ -27,7 +31,7 @@ $router->get('/type/{:num}', function($typeNumber) { pokemonsByType((int)$typeNu
 $router->post('/search', function() { searchResults(); });
 // if the user refresh /search, it will redirect to homePage because $_POST['nom'] from /search form is undefined
 $router->get('/search', function() {
-    header('Location: http://localhost:3000/');
+    header('Location: http://localhost:3000/accueil?page=1&number=20');
     exit();
 });
 
